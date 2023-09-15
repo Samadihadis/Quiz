@@ -2,10 +2,26 @@ package com.samadihadis.quiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Toast
+import com.samadihadis.quiz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        setContentView(binding.root)
+        binding.startButton.setOnClickListener {
+            val input = binding.userNameEditText.text.toString()
+            if (input.isEmpty()) {
+                Toast.makeText(this, getString(R.string.please_enter_username), Toast.LENGTH_LONG).show()
+            } else {
+                TODO("We must impl in future")
+            }
+        }
     }
+
 }
