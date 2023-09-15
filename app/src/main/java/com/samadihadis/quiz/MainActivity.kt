@@ -1,5 +1,6 @@
 package com.samadihadis.quiz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,9 +20,14 @@ class MainActivity : AppCompatActivity() {
             if (input.isEmpty()) {
                 Toast.makeText(this, getString(R.string.please_enter_username), Toast.LENGTH_LONG).show()
             } else {
-                TODO("We must impl in future")
+                val intent = Intent(this, QuestionActivity::class.java)
+                startActivity(intent)
             }
         }
+
+        // TODO: Please remove below codes
+        binding.userNameEditText.setText("Hadis")
+        binding.startButton.performClick()
     }
 
 }
