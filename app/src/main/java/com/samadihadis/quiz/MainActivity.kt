@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.startButton.setOnClickListener {
             val input = binding.userNameEditText.text.toString()
             if (input.isEmpty()) {
-                Toast.makeText(this, getString(R.string.please_enter_username), Toast.LENGTH_LONG).show()
+                Toast.makeText(this, getString(R.string.please_enter_username), Toast.LENGTH_LONG)
+                    .show()
             } else {
                 val intent = Intent(this, QuestionActivity::class.java)
                 startActivity(intent)
