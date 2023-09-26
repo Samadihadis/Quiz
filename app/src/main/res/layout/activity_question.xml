@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="80"
-                android:max="100"
+                android:max="7"
                 android:progress="70" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -65,10 +65,12 @@
             android:id="@+id/optionOneTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="4dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionOne"
+            android:onClick="onOptionsClicked"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
@@ -76,10 +78,12 @@
             android:id="@+id/optionTwoTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="4dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionTwo"
+            android:onClick="onOptionsClicked"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
@@ -87,10 +91,12 @@
             android:id="@+id/optionThreeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="4dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionThree"
+            android:onClick="onOptionsClicked"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
@@ -98,10 +104,12 @@
             android:id="@+id/optionFourTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="4dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionFour"
+            android:onClick="onOptionsClicked"
             android:textColor="@color/black"
             android:textSize="24dp" />
 
@@ -112,7 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:text="Button"
+            android:textStyle="bold"
+            android:text="جوابمو انتخاب کردم!"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
