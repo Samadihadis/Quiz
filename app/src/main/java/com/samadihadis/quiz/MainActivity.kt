@@ -22,13 +22,11 @@ class MainActivity : AppCompatActivity() {
                     .show()
             } else {
                 val intent = Intent(this, QuestionActivity::class.java)
+                intent.putExtra("username" , binding.userNameEditText.text.toString())
                 startActivity(intent)
             }
         }
 
-        // TODO: Please remove below codes
-        binding.userNameEditText.setText("Hadis")
-        binding.startButton.performClick()
     }
 
 }

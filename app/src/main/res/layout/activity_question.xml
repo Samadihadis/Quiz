@@ -67,6 +67,7 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:layout_marginTop="16dp"
+            android:tag="optionOne"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionOne"
@@ -79,6 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp"
+            android:tag="optionTwo"
             android:layout_marginTop="24dp"
             android:background="@drawable/option_background"
             android:gravity="center"
@@ -93,6 +95,7 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:layout_marginTop="24dp"
+            android:tag="optionThree"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionThree"
@@ -106,6 +109,7 @@
             android:layout_height="wrap_content"
             android:padding="4dp"
             android:layout_marginTop="24dp"
+            android:tag="optionFour"
             android:background="@drawable/option_background"
             android:gravity="center"
             android:text="OptionFour"
@@ -122,9 +126,22 @@
             android:gravity="center"
             android:textStyle="bold"
             android:text="جوابمو انتخاب کردم!"
+            android:onClick="submitAnswer"
             android:textColor="@color/white"
             android:textSize="24sp" />
-
+<Button
+    android:id="@+id/buttonShowResult"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:text="نمایش نتیجه"
+    android:visibility="gone"
+    android:onClick="submitAnswer"
+    android:textColor="@color/white"
+    android:textSize="24sp"
+    />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
