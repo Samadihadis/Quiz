@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="80"
-                android:max="7"
+                android:max="100"
                 android:progress="70" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -57,91 +57,96 @@
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/optionOneTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginTop="16dp"
-            android:tag="optionOne"
             android:background="@drawable/option_background"
             android:gravity="center"
-            android:text="OptionOne"
             android:onClick="onOptionsClicked"
+            android:padding="4dp"
+            android:tag="optionOne"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="24dp"
+            tools:text="OptionOne" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/optionTwoTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:tag="optionTwo"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/option_background"
             android:gravity="center"
-            android:text="OptionTwo"
             android:onClick="onOptionsClicked"
+            android:padding="4dp"
+            android:tag="optionTwo"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="24dp"
+            tools:text="OptionTwo" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/optionThreeTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
-            android:tag="optionThree"
             android:background="@drawable/option_background"
             android:gravity="center"
-            android:text="OptionThree"
             android:onClick="onOptionsClicked"
+            android:padding="4dp"
+            android:tag="optionThree"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="24dp"
+            tools:text="OptionThree" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/optionFourTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
+            android:layout_height="54dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginTop="24dp"
-            android:tag="optionFour"
             android:background="@drawable/option_background"
             android:gravity="center"
-            android:text="OptionFour"
             android:onClick="onOptionsClicked"
+            android:padding="4dp"
+            android:tag="optionFour"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="24dp"
+            tools:text="OptionFour" />
 
 
         <Button
             android:id="@+id/acceptButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:layout_margin="24dp"
             android:gravity="center"
-            android:textStyle="bold"
-            android:text="جوابمو انتخاب کردم!"
             android:onClick="submitAnswer"
+            android:text="جوابمو انتخاب کردم!"
             android:textColor="@color/white"
-            android:textSize="24sp" />
-<Button
-    android:id="@+id/buttonShowResult"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="24dp"
-    android:gravity="center"
-    android:textStyle="bold"
-    android:text="نمایش نتیجه"
-    android:visibility="gone"
-    android:onClick="submitAnswer"
-    android:textColor="@color/white"
-    android:textSize="24sp"
-    />
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonShowResult"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_margin="24dp"
+            android:gravity="center"
+            android:onClick="submitAnswer"
+            android:text="نمایش نتیجه"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="ABCD"
+            tools:visibility="visible" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

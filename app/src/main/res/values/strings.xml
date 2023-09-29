@@ -2,4 +2,6 @@
     <string name="app_name">Quiz</string>
     <string name="quiz_app">QuizApplication</string>
     <string name="please_enter_username">لطفا نام کاربری خود را وارد کنید</string>
+    <string name="go_next_question">برو به سوال بعدی</string>
+    <string name="selected_my_answer">جوابمو انتخاب کردم !</string>
 </resources>

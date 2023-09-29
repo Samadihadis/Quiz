@@ -3,7 +3,9 @@ package com.samadihadis.quiz
 class Constants {
     companion object {
 
-        val KEY_USERNAME = "username"
+        const val KEY_USERNAME = "username"
+        const val KEY_WRONG_ANSWER = "wrong_answer"
+        const val KEY_CORRECT_ANSWER = "correct_answer"
 
 
         fun getQuestions(): ArrayList<Question> {
