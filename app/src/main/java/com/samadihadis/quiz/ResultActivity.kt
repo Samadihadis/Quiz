@@ -6,18 +6,24 @@ import com.samadihadis.quiz.databinding.ActivityMainBinding
 import com.samadihadis.quiz.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
-    lateinit var binding: ActivityResultBinding
+
+    private lateinit var binding: ActivityResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val username =getIntent().getStringExtra(Constants.KEY_USERNAME)
-        val wrongIndex = getIntent().getIntExtra("wrongAnswer", 0)
-        val correctIndex = getIntent().getIntExtra("correctAnswer", 0)
+        val username = intent.getStringExtra(Constants.KEY_USERNAME)
+        val wrongIndex = intent.getIntExtra(Constants.KEY_WRONG_ANSWER, 0)
+        val correctIndex = intent.getIntExtra(Constants.KEY_CORRECT_ANSWER, 0)
 
-        binding.textViewCorrect.text = correctIndex.toString()
-        binding.textViewWrong.text = wrongIndex.toString()
-        binding.textViewUsername.text =username
+        with(binding) {
+            textViewCorrect.text = correctIndex.toString()
+            textViewWrong.text = wrongIndex.toString()
+            textViewUsername.text = username
+        }
+
     }
 }
