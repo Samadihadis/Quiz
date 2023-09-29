@@ -12,7 +12,7 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val username =getIntent().getStringExtra("username")
+        val username =getIntent().getStringExtra(Constants.KEY_USERNAME)
         val wrongIndex = getIntent().getIntExtra("wrongAnswer", 0)
         val correctIndex = getIntent().getIntExtra("correctAnswer", 0)
 

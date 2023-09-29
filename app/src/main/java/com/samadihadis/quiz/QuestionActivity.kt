@@ -16,13 +16,13 @@ import com.samadihadis.quiz.databinding.ActivityQuestionBinding
 class QuestionActivity : AppCompatActivity() {
 
 
-    lateinit var binding: ActivityQuestionBinding
-    var currentQuestion = 0
-    var selectedOption = 0
-    var correctAnswer = 0
-    var wrongAnswer = 0
+    private lateinit var binding: ActivityQuestionBinding
+    private var currentQuestion = 0
+    private var selectedOption = 0
+    private var correctAnswer = 0
+    private var wrongAnswer = 0
 
-    lateinit var questionList: ArrayList<Question>
+    private lateinit var questionList: ArrayList<Question>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,18 +33,18 @@ class QuestionActivity : AppCompatActivity() {
 
 
         loadQuestionData()
-       val username =  getIntent().getStringExtra("username")
-        Toast.makeText(this , username , Toast.LENGTH_LONG).show()
-        binding.buttonShowResult.setOnClickListener{
-            val intent = Intent(this@QuestionActivity , ResultActivity::class.java)
-            intent.putExtra("wrongAnswer" , wrongAnswer)
-            intent.putExtra("correctAnswer" , correctAnswer)
-            intent.putExtra("username" , username)
+        val username = getIntent().getStringExtra("username")
+        Toast.makeText(this, username, Toast.LENGTH_LONG).show()
+        binding.buttonShowResult.setOnClickListener {
+            val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
+            intent.putExtra("wrongAnswer", wrongAnswer)
+            intent.putExtra("correctAnswer", correctAnswer)
+            intent.putExtra("username", username)
             startActivity(intent)
         }
     }
 
-    fun loadQuestionData() {
+    private fun loadQuestionData() {
 
         val question = questionList[currentQuestion]
         binding.titleTextView.text = question.question
@@ -61,7 +61,7 @@ class QuestionActivity : AppCompatActivity() {
 
     }
 
-    fun setDefaultForOption() {
+    private fun setDefaultForOption() {
         var textViewOptions = ArrayList<TextView>()
         textViewOptions.add(binding.optionOneTextView)
         textViewOptions.add(binding.optionTwoTextView)
@@ -108,15 +108,15 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun submitAnswer(view: View) {
-            if (selectedOption == 0) {
-                binding.acceptButton.text = "جوابمو انتخاب کردم !"
-            }
+        if (selectedOption == 0) {
+            binding.acceptButton.text = "جوابمو انتخاب کردم !"
+        }
         if (selectedOption == 0 && currentQuestion < questionList.size - 1) {
             currentQuestion++
             loadQuestionData()
             setDefaultForOption()
         } else {
-            if (currentQuestion == questionList.size -1 && selectedOption == 0 ){
+            if (currentQuestion == questionList.size - 1 && selectedOption == 0) {
                 binding.acceptButton.visibility = View.GONE
                 binding.buttonShowResult.visibility = View.VISIBLE
                 return
@@ -132,7 +132,7 @@ class QuestionActivity : AppCompatActivity() {
     }
 
 
-    fun setBackgroundTextView(optionIndex: Int, drawableIndex: Int) {
+    private fun setBackgroundTextView(optionIndex: Int, drawableIndex: Int) {
         when (optionIndex) {
             1 -> {
                 binding.optionOneTextView.background =
@@ -157,12 +157,12 @@ class QuestionActivity : AppCompatActivity() {
 
     }
 
-    fun checkAnswer(){
+    private fun checkAnswer() {
         if (selectedOption == questionList[currentQuestion].correctAnswer) {
             setBackgroundTextView(selectedOption, R.drawable.option_background_correct)
             correctAnswer++
         } else {
-            wrongAnswer ++
+            wrongAnswer++
             setBackgroundTextView(selectedOption, R.drawable.option_background_wrong)
             setBackgroundTextView(
                 questionList[currentQuestion].correctAnswer,

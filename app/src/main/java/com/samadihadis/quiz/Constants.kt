@@ -3,6 +3,9 @@ package com.samadihadis.quiz
 class Constants {
     companion object {
 
+        val KEY_USERNAME = "username"
+
+
         fun getQuestions(): ArrayList<Question> {
             var questionList = ArrayList<Question>()
 

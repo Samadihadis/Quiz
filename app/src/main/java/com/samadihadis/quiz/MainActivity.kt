@@ -13,20 +13,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setupClickListener()
+
+    }
+
+    private fun setupClickListener() {
         binding.startButton.setOnClickListener {
             val input = binding.userNameEditText.text.toString()
             if (input.isEmpty()) {
-                Toast.makeText(this, getString(R.string.please_enter_username), Toast.LENGTH_LONG)
-                    .show()
+                binding.userNameEditText.error = getString(R.string.please_enter_username)
             } else {
                 val intent = Intent(this, QuestionActivity::class.java)
-                intent.putExtra("username" , binding.userNameEditText.text.toString())
+                intent.putExtra(Constants.KEY_USERNAME , input)
                 startActivity(intent)
             }
         }
-
     }
+
+//    private fun isEmpty2(charSequence: CharSequence): Boolean = charSequence.length == 0
+
+//    private fun CharSequence.isEmpty2(): Boolean = length == 0
 
 }
